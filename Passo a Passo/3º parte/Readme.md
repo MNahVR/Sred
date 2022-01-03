@@ -6,10 +6,14 @@
 ````
 sudo apt update
 ````
+![11](https://github.com/MNahVR/Sred/blob/main/Galeria/11.png)
 
 ````
 sudo apt install samba
 ````
+
+![12](https://github.com/MNahVR/Sred/blob/main/Galeria/12.png)
+
 ## 14º - Verifique se o samba esta indo
 ````
 ou,
@@ -21,6 +25,7 @@ sudo systemctl status smbd
 ou,
 netstat -an | grep LISTEN
 ````
+![13](https://github.com/MNahVR/Sred/blob/main/Galeria/13.png)
 
 ## 15º - Fazer backup do arquivo de configuração do samba
 
@@ -41,6 +46,7 @@ sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/samb
 ````
 sudo nano /etc/samba/smb.conf
 ````
+![14](https://github.com/MNahVR/Sred/blob/main/Galeria/14.png)
 
 ## 16º - Editar arquivo digitado anteriormente (/etc/samba/smb.conf)
 
@@ -63,5 +69,5 @@ interfaces = 127.0.0.1/8 ens160 ens192
    guest ok = no
    valid users = @sambashare
 ````
-
+![15](https://github.com/MNahVR/Sred/blob/main/Galeria/15.png)
 
