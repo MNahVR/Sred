@@ -116,8 +116,8 @@ iptables -A FORWARD -p tcp -d 10.9.14.100 –-dport 445 -j ACCEPT
 iptables -A PREROUTING -t nat -i ens192 -p tcp –-dport 139 -j DNAT –-to 10.9.14.100:139
 iptables -A FORWARD -p tcp -d 10.9.14.100 –-dport 445 -j ACCEPT
 
-iptables -A PREROUTING -t nat -i ens160 -p tcp –-dport 53 -j DNAT –-to 10.9.14.126:53
-iptables -A FORWARD -p udp -d 10.9.14.126 –-dport 53 -j ACCEPT
+iptables -A PREROUTING -t nat -i ens160 -p tcp –-dport 53 -j DNAT –-to 10.9.14.221:53
+iptables -A FORWARD -p udp -d 10.9.14.221 –-dport 53 -j ACCEPT
 ````
 
 ![10](https://github.com/MNahVR/Sred/blob/main/Galeria/10.png)
