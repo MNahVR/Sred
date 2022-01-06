@@ -1,7 +1,7 @@
 # Configuração de um servidor de gateway com Iptables/NAT
 ## CONFIGURAÇÃO SAMBA
 
-## 13º - Faça o update primeiro, e em seguida a instalação do samba
+## 13º passo - Faça o update primeiro, e em seguida a instalação do samba
 
 ````
 sudo apt update
@@ -14,7 +14,7 @@ sudo apt install samba
 
 ![12](https://github.com/MNahVR/Sred/blob/main/Galeria/12.png)
 
-## 14º - Verifique se o samba esta indo
+## 14º passo - Verifique se o samba esta indo
 ````
 ou,
 whereis samba
@@ -27,13 +27,13 @@ netstat -an | grep LISTEN
 ````
 ![13](https://github.com/MNahVR/Sred/blob/main/Galeria/13.png)
 
-## 15º - Fazer backup do arquivo de configuração do samba
+## 15º passo - Fazer backup do arquivo de configuração do samba
 
 ````
 sudo cp /etc/samba/smb.conf{,.backup}
 ````
 
-## 15º - Verificar se foi feito mesmo o backup do arquivo e criar um arquivo novo somente com os comandos necessários
+## 16º passo - Verificar se foi feito mesmo o backup do arquivo e criar um arquivo novo somente com os comandos necessários
 
 ````
 ls -la /etc/samba
@@ -48,7 +48,7 @@ sudo nano /etc/samba/smb.conf
 ````
 ![14](https://github.com/MNahVR/Sred/blob/main/Galeria/14.png)
 
-## 16º - Editar arquivo digitado anteriormente (/etc/samba/smb.conf)
+## 17º passo - Editar arquivo digitado anteriormente (/etc/samba/smb.conf)
 
 ### Adicionar o que esta escrito abaixo no diretorio [global]:
 
@@ -78,7 +78,7 @@ interfaces = 127.0.0.1/8 ens160 ens192
 sudo systemctl restart smbd
 ````
 
-## 17º - Criar um usuário do S.O, onde vai utilizar o compartilhamento samba
+## 18º passo - Criar um usuário do S.O, onde vai utilizar o compartilhamento samba
 
 ````
 Dados do usuário:
@@ -107,7 +107,7 @@ sudo usermod -aG sambashare aluno
 ````
 ![18](https://github.com/MNahVR/Sred/blob/main/Galeria/18.png)
 
-## 18º - O samba está instalado, mas para compartilhá-lo em rede é preciso criar um diretório
+## 19º passo - O samba está instalado, mas para compartilhá-lo em rede é preciso criar um diretório
 
 ````
 sudo mkdir /home/<aluno>/sambashare/
@@ -118,7 +118,7 @@ sudo mkdir -p /samba/public
 ````
 ![19](https://github.com/MNahVR/Sred/blob/main/Galeria/19.png)
 
-## 19º - Para que qualquer um possa acessar o compartilhamento público, configure as permissões
+## 20º passo - Para que qualquer um possa acessar o compartilhamento público, configure as permissões
 
 ````
 sudo chown -R nobody:nogroup /samba/public
@@ -131,7 +131,7 @@ sudo chgrp sambashare /samba/public
 ````
 ![20](https://github.com/MNahVR/Sred/blob/main/Galeria/20.png)
 
-## 20º - Verificar o acesso ao recurso compartilhado 
+## 21º passo - Verificar o acesso ao recurso compartilhado 
 
 ````
 * Digite no Windows Explorer o endereço IP do servidor samba, com o "\\" antes
